@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #F8E7AE;
+            font-family: Arial, sans-serif;
+        }
+
+        #card {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        #cover, #front, #inside {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #E0E0E0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+            padding: 20px;
+            text-align: center;
+            transform-style: preserve-3d;
+        }
+
+        #cover {
+            transform: rotateY(0deg);
+            background: #6AB547;
+            color: #fff;
+        }
+
+        /* Image Styling for Cover */
+        #cover img {
+            width: 80%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        #front {
+            transform: rotateY(-180deg);
+            background: #E0E0E0;
+        }
+
+        #inside {
+            transform: rotateY(180deg);
+        }
+
+        #card:hover #cover {
+            transform: rotateY(-180deg);
+            transition: transform 0.8s;
+        }
+
+        #card:hover #front {
+            transform: rotateY(0deg);
+            transition: transform 0.8s 0.8s;
+        }
+
+        #card:hover #inside {
+            transform: rotateY(0deg);
+            transition: transform 0.8s;
+        }
+
+        h2, h3 {
+            color: #00CC88;
+            margin: 0.3em 0;
+        }
+
+        #cover h2 {
+            font-size: 1.8rem;
+        }
+
+        #inside p {
+            color: #444;
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+
+        .emoji {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <!-- Cover of the Card with Image -->
+        <div id="cover">
+            <img src="flower.jpg" alt="Cover Image">
+            <h2>Open Me!</h2>
+            <p>Happy Birthday Surprise Inside</p>
+        </div>
+
+        <!-- Front Page of the Card -->
+        <div id="front">
+            <h2>Buat Cantiknya aku</h2>
+            <p>Happy Birthday!</p>
+        </div>
+
+        <!-- Inside Message of the Card -->
+        <div id="inside">
+            <h3>Putri Novelita</h3>
+            <h4>(Happy Birthday!)</h4>
+            <p>Dear Love,</p>
+            <p>I’m sorry for the times I may have let you down.</p>
+            <p>I’ll keep trying to be better for you.</p>
+            <p>If we ever part ways, please remember the memories we created together.</p>
+            <p>They mean everything to me.</p>
+            <p class="emoji">I love you 💌💍😘</p>
+            <p>Happy Birthday, love!</p>
+            <p>- Randa</p>
+        </div>
+    </div>
+</body>
+</html>
